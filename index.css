@@ -1,3 +1,23 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.box1 {
+    height: 100%;
+}
+
+.box2 {
+    position: relative;
+    background-color: white;
+    height: 100%;
+  }
+
 .layout-list {
     display: grid;
     gap: 50px;
@@ -6,10 +26,19 @@
 }
 
 .layout-list > div {
-    background-color: rgb(230, 230, 230);
+    color: black;
+    background-color: white;
+    border: 2px solid #008CBA;
+    border-radius: 8px;
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    transition-duration: 0.4s;
+}
+
+.layout-list > div:hover {
+    background-color: #008CBA;
+    color: white;
 }
 
 .start {
