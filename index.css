@@ -1,0 +1,13 @@
+.layout-list {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.layout-list > div {
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}

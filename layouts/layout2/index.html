@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #181818
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #cacaca;
+            text-align: center;
+            font-size: 14px;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            color: #ffffff;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+    </style>
+    <title>Layout 1</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Menu</a></li>
+        <li><a style="float: none; position: absolute; left: 50%; transform: translate(-50%);" href="#">Logo</a></li>
+        <li style="float:right"><a href="#">Login</a></li>
+        <li style="float:right"><a href="#">Account</a></li>
+        <li style="float:right"><a href="#">Star</a></li>
+
+    </ul>
+</body>
+</html>
