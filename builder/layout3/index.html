@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='index.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>File name:</label><br>
+        <input type='text' id='fileName'><br><br>
+        <label>Colors</label><br>
+        <label>First and Secondary Colors (hex)</label><br>
+        <input type='text' id='color1'><br>
+        <input type='text' id='color2'><br><br>
+        <label>Navigation bar</label><br>
+        <label>Element 1, 2, 3, 4:</label><br>
+        <input type='text' id='nav1'><br>
+        <input type='text' id='nav2'><br>
+        <input type='text' id='nav3'><br>
+        <input type='text' id='nav4'><br><br>
+        <label>Main part</label><br>
+        <label for='heading1'>First Heading:</label><br>
+        <input type='text' id='heading1'><br>
+        <label for='text1'>Text in Box 1:</label><br>
+        <textarea id='text1' rows='10' cols='30'></textarea><br>
+        <label for='heading2'>Second Heading:</label><br>
+        <input type='text' id='heading2'><br>
+        <label for='text2'>Text in Box 2:</label><br>
+        <textarea id='text2' rows='10' cols='30'></textarea><br>
+
+        <button id='downloadButton' onclick='createAndDownloadFile()'>Create and Download your website</button>
+    </form>
+</body>
+</html>
