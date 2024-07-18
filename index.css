@@ -1,13 +1,76 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.box1 {
+    height: 100%;
+}
+
+.box2 {
+    position: relative;
+    background-color: white;
+    height: 100%;
+  }
+
 .layout-list {
     display: grid;
-    gap: 50px;
+    gap: 40px;
     grid-template-columns: auto auto auto;
     padding: 10px;
 }
 
 .layout-list > div {
-    background-color: rgb(230, 230, 230);
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: black;
+    background-color: white;
+    border: 2px solid #008CBA;
+    border-radius: 8px;
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.layout-list > div:hover {
+    margin-top: 0;
+    margin-bottom: 10px;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.start {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    border-radius: 8px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #008CBA;
+    color: white;
 }
