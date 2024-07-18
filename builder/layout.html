@@ -3,52 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Website Builder</title>
+    <title>Our Business</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            max-width: 600px;
+            height: 400px;
+            margin: 70px auto 0 auto;
+            padding: 20px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #333333;
+            box-sizing: border-box;
+        }
+        .container2 {
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #333333;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        p {
+            color: #333333;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="box1">
-        <div class="start">
-            <h1>Website Builder</h1>
-            <form action="#chooselayout">
-                <button class="button">Start</button>
-            </form>
-        </div>
+    <div class="navbar">
+        <a href="#home">nav1</a>
+        <a href="#services">nav2</a>
+        <a href="#contact">nav3</a>
+        <a style="float: right;" href="#about">nav4</a>
     </div>
-    <div class="box2">
-        <h1 id="chooselayout" style="text-align: center;">Choose a layout</h1>
-        <div class="layout-list">
-            <div>
-                <p style="text-align: center; font-size: 30px; margin: 0;">Apple-like website</p>
-                <br>
-                <img src="layout1.jpeg" alt="Apple like Site" width="300px">
-            </div>
-            <div>
-                <p style="text-align: center; font-size: 30px; margin: 0;">Apple-like website</p>
-                <br>
-                <img src="layout1.jpeg" alt="Apple like Site" width="300px">
-            </div>
-            <div>
-                <p style="text-align: center; font-size: 30px; margin: 0;">Apple-like website</p>
-                <br>
-                <img src="layout1.jpeg" alt="Apple like Site" width="300px">
-            </div>
-            <div>
-                <p style="text-align: center; font-size: 30px; margin: 0;">Apple-like website</p>
-                <br>
-                <img src="layout1.jpeg" alt="Apple like Site" width="300px">
-            </div>
-            <div>
-                <p style="text-align: center; font-size: 30px; margin: 0;">Apple-like website</p>
-                <br>
-                <img src="layout1.jpeg" alt="Apple like Site" width="300px">
-            </div>
-            <div>
-                <p style="text-align: center; font-size: 30px; margin: 0;">Apple-like website</p>
-                <br>
-                <img src="layout1.jpeg" alt="Apple like Site" width="300px">
-            </div>
-        </div>
+    <div class="container">
+        <h1>heading1</h1>
+        <p>text1</p>
+    </div>
+    <div class="container2">
+        <h1>heading2</h1>
+        <p>text2</p>
     </div>
 </body>
 </html>
