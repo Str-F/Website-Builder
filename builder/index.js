@@ -14,7 +14,7 @@ function createAndDownloadFile() {
     event.preventDefault();
 
     var fileName = document.getElementById('fileName').value;
-    var fileContent = document.getElementById('fileContent').value;
+    var fileContent = document.getElementById('fileContent').value.replace("Car", "plane")
     var fileType = 'text/html';
 
     if (!fileName.endsWith('.html')) {
