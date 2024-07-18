@@ -20,12 +20,14 @@ html, body {
 
 .layout-list {
     display: grid;
-    gap: 50px;
+    gap: 40px;
     grid-template-columns: auto auto auto;
     padding: 10px;
 }
 
 .layout-list > div {
+    margin-top: 10px;
+    margin-bottom: 0;
     color: black;
     background-color: white;
     border: 2px solid #008CBA;
@@ -34,11 +36,15 @@ html, body {
     font-size: 30px;
     text-align: center;
     transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .layout-list > div:hover {
-    background-color: #008CBA;
-    color: white;
+    margin-top: 0;
+    margin-bottom: 10px;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .start {
