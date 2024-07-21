@@ -9,7 +9,7 @@ function loadFile(filePath) {
   return result;
 }
 
-function createAndDownloadFile() {
+function createFile() {
 
     event.preventDefault();
 
@@ -25,33 +25,71 @@ function createAndDownloadFile() {
     var heading2 = document.getElementById('heading2').value;
     var text2 = document.getElementById('text2').value;
 
+    if (!fileName) {
+      fileName = 'default.html'
+    };
+
+    if (!fileName.endsWith('.html')) {
+      fileName += '.html';
+    }
+
     var fileContent = loadFile('layout.html')
     var fileType = 'text/html';
 
-    var fileContent = fileContent.replace('color1', color1)
-    var fileContent = fileContent.replace('color2', color2)
-    var fileContent = fileContent.replace('nav1', nav1)
-    var fileContent = fileContent.replace('nav2', nav2)
-    var fileContent = fileContent.replace('nav3', nav3)
-    var fileContent = fileContent.replace('nav4', nav4)
-    var fileContent = fileContent.replace('heading1', heading1)
-    var fileContent = fileContent.replace('text1', text1)
-    var fileContent = fileContent.replace('heading2', heading2)
-    var fileContent = fileContent.replace('text2', text2)
+    var fileContent = fileContent.replace('color1', color1);
+    var fileContent = fileContent.replace('color2', color2);
+    var fileContent = fileContent.replace('nav1', nav1);
+    var fileContent = fileContent.replace('nav2', nav2);
+    var fileContent = fileContent.replace('nav3', nav3);
+    var fileContent = fileContent.replace('nav4', nav4);
+    var fileContent = fileContent.replace('heading1', heading1);
+    var fileContent = fileContent.replace('text1', text1);
+    var fileContent = fileContent.replace('heading2', heading2);
+    var fileContent = fileContent.replace('text2', text2);
 
-    if (!fileName.endsWith('.html')) {
-        fileName += '.html';
-    }
+    return [fileContent, fileType, fileName];
+};
+
+function downloadFile() {
+
+    const returnes = createFile()
+
+    const fileContent = returnes[0];
+    const fileType = returnes[1];
+    const fileName = returnes[2];
+
+    event.preventDefault();
 
     var file = new Blob([fileContent], {type: fileType});
 
     var a = document.createElement('a');
     a.href = URL.createObjectURL(file);
-    a.download = fileName || 'default.html';
+    a.download = fileName;
 
     document.body.appendChild(a);
 
     a.click();
 
     document.body.removeChild(a);
-}
+};
+
+window.addEventListener("DOMContentLoaded", (event) => {
+
+  const previewFrame = document.getElementById('preview');
+  const previewDocument = previewFrame.contentWindow.document;
+
+  previewDocument.open();
+  previewDocument.write(createFile());
+  previewDocument.close();
+
+  document.getElementById("builder").addEventListener("input", () => {
+
+    console.log("INPUT");
+
+    const previewFrame = document.getElementById('preview');
+    const previewDocument = previewFrame.contentWindow.document;
+    previewDocument.open();
+    previewDocument.write(createFile());
+    previewDocument.close();
+});
+});

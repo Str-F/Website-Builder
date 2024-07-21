@@ -4,58 +4,69 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <script src='index.js'></script>
-    <script src='../../jquery-3.7.1.min.js'></script>
-    <script>
-        $.fn.extend({
-            trackChanges: function () {
-                $(document).on('change', $(this).find(':input'), function (e) {
-                    var el = $(e.target);
-                    $(el).closest('form').data("changed", true);
-        }); 
-        }
-        ,
-        isChanged: function() { 
-            return this.data("changed"); 
-        }
-        });
-
-
-        $("#builder").trackChanges();
-
-        if ($("#builder").isChanged()) {
-            alert("hallo")
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
         }
 
-        console.log('hello')
+        ::-webkit-scrollbar {
+            display: none;
+        }
 
-    </script>
-    <title>Document</title>
+        .builder, #previewBox {
+            flex: 1;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .builder {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #previewBox {
+            border-left: 1px solid #ccc;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <title>Builder-Tool</title>
 </head>
 <body>
-    <form id="builder">
-        <label>File name:</label><br>
-        <input type='text' id='fileName'><br><br>
-        <label>Colors</label><br>
-        <label>First and Secondary Colors (hex)</label><br>
-        <input type='text' id='color1'><br>
-        <input type='text' id='color2'><br><br>
-        <label>Navigation bar</label><br>
-        <label>Element 1, 2, 3, 4:</label><br>
-        <input type='text' id='nav1'><br>
-        <input type='text' id='nav2'><br>
-        <input type='text' id='nav3'><br>
-        <input type='text' id='nav4'><br><br>
-        <label>Main part</label><br>
-        <label for='heading1'>First Heading:</label><br>
-        <input type='text' id='heading1'><br>
-        <label for='text1'>Text in Box 1:</label><br>
-        <textarea id='text1' rows='10' cols='30'></textarea><br>
-        <label for='heading2'>Second Heading:</label><br>
-        <input type='text' id='heading2'><br>
-        <label for='text2'>Text in Box 2:</label><br>
-        <textarea id='text2' rows='10' cols='30'></textarea><br>
-
-        <button id='downloadButton' onclick='createAndDownloadFile()'>Create and Download your website</button>
-    </form>
+    <div class="builder">
+        <form id="builder">
+            <label>File name:</label><br>
+            <input type='text' id='fileName'><br>
+            <label>Colors</label><br>
+            <label>First and Secondary Colors (hex)</label><br>
+            <input type='text' id='color1'><br>
+            <input type='text' id='color2'><br>
+            <label>Navigation bar</label><br>
+            <label>Element 1, 2, 3, 4:</label><br>
+            <input type='text' id='nav1'><br>
+            <input type='text' id='nav2'><br>
+            <input type='text' id='nav3'><br>
+            <input type='text' id='nav4'><br>
+            <label>Main part</label><br>
+            <label for='heading1'>First Heading:</label><br>
+            <input type='text' id='heading1'><br>
+            <label for='text1'>Text in Box 1:</label><br>
+            <textarea id='text1' rows='10' cols='30'></textarea><br>
+            <label for='heading2'>Second Heading:</label><br>
+            <input type='text' id='heading2'><br>
+            <label for='text2'>Text in Box 2:</label><br>
+            <textarea id='text2' rows='10' cols='30'></textarea><br>
+            <button type='button' id='downloadButton' onclick='downloadFile()'>Create and Download your website</button>
+        </form>
+    </div>
+    <div id="previewBox">
+        <iframe id="preview" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"></iframe>
+    </div>
 </body>
 </html>
